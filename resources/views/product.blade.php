@@ -138,6 +138,7 @@
     </ul>
     </div>
     
+    <form>
     <div class="form-group box-info-product">
     <div class="option quantity">
     <div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
@@ -150,18 +151,16 @@
     </div>
     </div>
     <div class="cart">
-    <input type="button" data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" onclick="cart.add('42', '1');" data-original-title="Add to Cart">
-    </div>
+            <input type="hidden" name="id" value="{{$data['Products']->id}}">
+            {{-- <input type="button" title="" value="Add to Cart" id="button-cart" class="btn btn-mega btn-lg" data-original-title="Add to Cart"> --}}
+            {{-- <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick="cart.add('50');"><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button> --}}
+            <p class="xyz addToCart"><i class="fa fa-shopping-cart"></i>Add to Cart</p>
+        </form></div>
     <div class="add-to-links wish_comp">
     <ul class="blank list-inline">
     <li class="wishlist">
     <a class="icon" data-toggle="tooltip" title=""
     onclick="wishlist.add('50');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i>
-    </a>
-    </li>
-    <li class="compare">
-    <a class="icon" data-toggle="tooltip" title=""
-    onclick="compare.add('50');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i>
     </a>
     </li>
     </ul>

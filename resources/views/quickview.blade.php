@@ -275,29 +275,6 @@
             });
     </script>
 
-
-      
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $("cart").click(function(e){
-            alert('yes');
-            // e.preventDefault();
-            // var id = $("input[name=id]").val();
-            // $.ajax({
-            //    type:'POST',
-            //    url:'/addtocart',
-            //    data:{id':id},
-            //    success:function(data){
-            //     cart.add(data.success, '1')
-                  
-            //    }
-            // });
-        });
-    </script>
     <!--Middle Part End-->
     <!---allscript Section Start--->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

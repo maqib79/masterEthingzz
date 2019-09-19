@@ -26,6 +26,11 @@
 <link href="{{ asset('css/responsive.css')}}" rel=stylesheet>
 <link href="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+              
+<script>
+    
+       </script>
 </head><!----Top Section END----->
 </head>
 <body class="common-home res layout-home1">
@@ -110,63 +115,10 @@
 </div>
 
 <div class="col-md-2 col-sm-5 col-xs-12 shopping_cart pull-right">
-<div id=cart class=" btn-group btn-shopping-cart">
-<a data-loading-text=Loading... class="top_cart dropdown-toggle" data-toggle=dropdown>
-<div class=shopcart>
-<span class="handle pull-left"></span>
-<span class=title>My cart</span>
-<p class="text-shopping-cart cart-total-full">{{$data['cart']->count()}} item(s) - {{$data['TotalAmountCart']}} PKR </p>
-</div>
-</a>
-<ul class="tab-content content dropdown-menu pull-right shoppingcart-box" role=menu>
-<li>
-<table class="table table-striped">
-<tbody>
-    @foreach ($data['cart'] as $item)
-        
-    <tr>
-        <td class=text-center style=width:70px>
-                <a href=product.php> <img src="{{asset('storage/'.$item->options->image)}}" style=width:70px alt="{{$item->name}}" title="{{$item->name}}" class=preview> </a>
-            </td>
-            <td class=text-left> <a class=cart_product_name href=product.php>{{$item->name}}</a> </td>
-            <td class=text-center> {{$item->qty}} </td>
-            <td class=text-center> {{$item->price}} </td>
-            <td class=text-right>
-                <a href=product.php class="fa fa-edit"></a>
-            </td>
-            <td class=text-right>
-                <a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a>
-            </td>
-        </tr>
-    @endforeach
-</tbody>
-</table>
-</li>
-<li>
-<div>
-<table class="table table-bordered">
-<tbody>
-<tr>
-<td class=text-left><strong>Sub-Total</strong>
-</td>
-<td class=text-right>{{$data['TotalAmountCart']}} PKR</td>
-</tr>
-<tr>
-<td class=text-left><strong>Eco Tax (-2.00)</strong>
-</td>
-<td class=text-right>$2.00</td>
-</tr>
-<tr>
-<td class=text-left><strong>Total</strong>
-</td>
-<td class=text-right>$1,262.00</td>
-</tr>
-</tbody>
-</table>
-<p class=text-right> <a class="btn view-cart" href=cart.php><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href=checkout.php><i class="fa fa-share"></i>Checkout</a> </p>
-</div>
-</li>
-</ul>
+<div id="mycart" class=" btn-group btn-shopping-cart">
+
+
+    
 </div>
 </div>
 </div>
@@ -576,7 +528,6 @@ Navigation
     
     
     
-    
     <!---allscript Section Start--->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Include Libs & Plugins
@@ -610,26 +561,137 @@ Navigation
         <script src="{{ asset('js/themejs/pathLoader.js')}}"></script>
     <!---    <script src="https://ethingzz.com/js/themejs/fadeimgscroll.js"></script>---><!---allscript Section End--->
     
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    <script>
+
+        $(document).ready(function(){
+            
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $("#ordertable").on("click",".qtyUpdate",function(){
+        //  $(".qtyUpdate").click(function(){
+            var rowId= $(this).attr("id");
+    var quantity= $(this).closest('tr').find('td').eq(2).find('input').val();
+            
+        $.ajax({
+           type:'POST',
+           url:'/updatecart',
+           data:{
+               rowId:rowId
+               ,qty:quantity
+           },
+           success: function(response){
+                
+                   cartlist();
+                   refreshmycart();
             }
         });
-        $(".addToCart").click(function(e){
-            e.preventDefault();
+          });
+
+
+        
+
+
+          $("#ordertable").on("click",".removeCart",function(){
+        //  $(".qtyUpdate").click(function(){
+            var rowId= $(this).attr("id");
+            $.ajax({
+            type:'POST',
+            url:'/removecart',
+            data:{
+                rowId:rowId
+            },
+            success: function(response){
+                refreshmycart();
+                    
+                    cartlist();
+                }
+            });
+          });
+
+          $("#mycart").on("click",".rmv",function(){
+            var rowId= $(this).attr("id");
+            $.ajax({
+            type:'POST',
+            url:'/removecart',
+            data:{
+                rowId:rowId
+            },
+            success: function(response){
+                refreshmycart();
+                    
+                    cartlist();
+                }
+            });
+                  });
+
+                  
+          function refreshmycart(){
+
+               $.ajax({    
+                    type: "GET",
+                    url: "/mycart",             
+                    dataType: "html",   //expect html to be returned                
+                    success: function(response){                    
+                        $("#mycart").html(response); 
+                        }
+                });
+        }
+
+        $(".xyz").click(function(){
+                var qty = $("input[name=quantity]").val();
             var id = $("input[name=id]").val();
             $.ajax({
                type:'POST',
                url:'/addtocart',
-               data:{id:id},
+               data:{id:id,qty:qty},
                success:function(data){
                 cart.add(data.success, '1')
-                  
+                refreshmycart();
                }
             });
+                
+              });
+          function cartlist(){
+               $.ajax({    //create an ajax request to display.php
+       type: "GET",
+       url: "/cartlist",             
+       dataType: "html",   //expect html to be returned                
+       success: function(response){                    
+           $(".showcart").html(response); 
+}
+});
+}
+
+$("#carttable").on("click",".removeCart",function(){
+        //  $(".qtyUpdate").click(function(){
+            var rowId= $(this).attr("id");
+            console.log('removed');
+        // $.ajax({
+        //    type:'POST',
+        //    url:'/removecart',
+        //    data:{
+        //        rowId:rowId
+        //    },
+        //    success: function(response){
+        //            cartlist();
+        //            refreshmycart();
+        //     }
+        //      });
+          });
+window.onload=function(){
+    
+    cartlist();
+    refreshmycart();
+
+}
+
+
         });
-    </script>
+</script>
     
     </body>
     </html>
