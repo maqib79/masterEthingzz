@@ -11,11 +11,10 @@
        <tbody>
            @foreach ($data['cart'] as $item)
            <tr>
-             <td class="text-center"><a href="product.html"><img width="70px" src="{{asset('storage/'.$item->options->image)}}" alt="{{$item->name}}" title="{{$item->name}}" class="img-thumbnail" /></a></td>
-             <td class="text-left"><a href="product.html">{{$item->name}}</a><br />
+             <td class="text-center"><a href="/product/{{Str::slug($item->ProductName)}}"><img width="70px" src="{{asset('storage/'.$item->options->image)}}" alt="{{$item->name}}" title="{{$item->name}}" class="img-thumbnail" /></a></td>
+             <td class="text-left"><a href="/product/{{Str::slug($item->ProductName)}}">{{$item->name}}</a><br />
               </td>
              <td class="text-left" width="200px"><div class="input-group btn-block quantity">
-                <form >
                     <input type="text" name="quantity" value="{{$item->qty}}" size="1" class="form-control" />
                     <input type="hidden" name="rowid" value="{{$item->rowId}}">
                   <span class="input-group-btn">

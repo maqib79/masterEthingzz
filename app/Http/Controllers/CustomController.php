@@ -10,6 +10,7 @@ use App\Banner;
 use App\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Mail\CheckOutMail;
+use Illuminate\Support\Facades\DB;
 
 class CustomController extends Controller
 {
@@ -33,7 +34,6 @@ class CustomController extends Controller
         $data['SaleCheck'] = Banner::all();
         $data['cart'] = Cart::content();
         $data['TotalAmountCart'] = Cart::subtotal();
-        
         // $FeaturedProducts = Product::featured()->get();
         // $NewReleaseProducts = Product::newrelease()->get();
         // $BestSellingProducts = Product::bestselling()->get();
@@ -53,11 +53,11 @@ class CustomController extends Controller
             $price = $product->ProductPrice;
         }
         $productImage= $product->productimages->first()->name;
-        Cart::add($product->id, $product->ProductName, $qty, $price,['image' => $productImage]);
+        Cart::add($product->id, $product->ProductName, $qty, $price,['image' => $productImage,'delivery_method' => '','payment_method' => '']);
         return response()->json(['success'=>$product->ProductName]);
     }
 
-
+   
     //search method
     public function fetch(Request $request)
     {
@@ -88,16 +88,13 @@ class CustomController extends Controller
 
     }
     public function category($category) {
-
-        dump(Cart::content());
-        dd(Cart::content()->first()->rowId);
+        // $users = DB::table('orders')->get();
+         dd(Cart::content());
+       
         $data['Categories'] = Category::ParentCategory()->get();
         $cat=str_replace('-', ' ', $category);
         $data['Products'] = Category::where('CategoryName',$cat)->get()->first();
-        $data['pro'] = Product::where('category_id',$data['Products']->id)->paginate(1);
-        $data['TotalAmountCart'] = Cart::subtotal();
-        $data['cart'] = Cart::content();
-       // dd($data['Products']->first()->product);
+        $data['pro'] = Product::where('category_id',$data['Products']->id)->paginate(12);
         return view('category',['data'=>$data]);
     }
 
@@ -147,7 +144,6 @@ class CustomController extends Controller
         $data['Categories'] = Category::ParentCategory()->get();
         $data['cart'] = Cart::content();
         $data['TotalAmountCart'] = Cart::subtotal();
-
         return view('cart',['data' => $data]);
     }
 
@@ -158,14 +154,50 @@ class CustomController extends Controller
 
         return view('checkout',['data' => $data]);
     }
-
+    
     public function checkoutproceed(){
+        
+        Mail::to('ASSD@ASDA.ASDAS')->send(new CheckOutMail());
+        dd('sent');
+        // $data = [
+        //     'name' => 'abc',
+        // ];
+            foreach (Cart::content() as $item) {
+                # code...
+                DB::table('orders')->insert(
+                    [
+                        'product_id' => $item->id,
+                     'quantity' => $item->qty,
+                     'price' => $item->price,
+                     'user_name' => request('firstname'),
+                     'user_email' => request('email'),
+                     'user_phone' => request('telephone'),
+                     'user_add1' => request('address_1'),
+                     'user_add2' => request('address_2'),
+                     'user_city' => request('city'),
+                     'delivery_method' => 'none',
+                     'payment_method' => request('Payment_method'),
+                     
+                     
+                     
+                     ]
+                );
 
-        $data = [
-            'name' => 'abc',
-        ];
 
-        Mail::to('test@test.com')->send(new CheckOutMail());
+            }
+            $order_id = DB::table('orders')->max('id');
+            $total=str_replace(",","",Cart::subtotal());
+
+
+            $total=$total+($total*0.17)+200;
+
+            DB::table('order2')->insert(
+                [
+                    'order_id' => $order_id,
+                 'total' => $total,
+                 ]
+            );
+
     }
 
 

@@ -155,59 +155,65 @@
             @else
                 
             			
-                @foreach ($data['Products'] as $products)
-                        <div class="product-layout col-md-4 col-sm-6 col-xs-12">
-                            <div class="product-item-container">
-                                <div class="left-block">
-                                    <div class="product-image-container lazy second_img ">
-                                                <img src="{{asset('storage/'.$products->productimages->first()->name)}}" alt="{{asset('storage/'.$products->productimages->first()->alttag)}}" class="" />
-                                    </div>
-                                    <!--Sale Label-->
-                                    <span class="label label-sale">Sale</span>
-                                    
-                                    <!--full quick view block-->
-                                    <a class="quickview  visible-lg" data-fancybox-type="iframe"  href="/quickview/{{Str::slug($products->ProductName)}}">  Quickview</a>
-                                    <!--end full quick view block-->
-                                </div>
-                                
-                                
-                                <div class="right-block">
-                                    <div class="caption">
-                                        <h4><a href="/product/{{Str::slug($products->ProductName)}}">{{$products->ProductName}}</a></h4>		
-                                        <div class="ratings">
-                                            <div class="rating-box">
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                                            </div>
-                                        </div>
-                                                            
-                                        <div class="price">
-                                                @if (strtotime($products->sales->startdate)<=strtotime(date('Y-m-d')) && strtotime($products->sales->enddate)>=strtotime(date('Y-m-d')))
-                                
-                                                <span class=price-new>Rs: {{$products->ProductPrice}} /- PKR</span>
-                                                <span class=price-old>Rs: {{$products->sales->first()->sale}} /- PKR</span>
-                                                    
-                                                @else
-                                                <span class=price-new>Rs: {{$products->ProductPrice}} /- PKR</span>
-                                                @endif    
-                                        </div>
-                                        <div class="description item-desc hidden">
-                                        <p>{{$products->ProductDesc}}</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="button-group">
-                                        <button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Add to Cart</span></button>
-                                        <button class="wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-                                        <button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-                                    </div>
-                                </div><!-- right block -->
-
-                            </div>
-                        </div><!----product-layout col-md-4 col-sm-6 col-xs-12----->
+				@foreach ($data['Products'] as $products)
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					{{-- index page product card start --}}
+					<div class="ltabs-item product-layout ">
+						<div class="product-item-container">
+						<div class=left-block>
+						<div class="product-image-container second_img ">
+						<img src="{{asset('storage/'.$products->productimages->first()->name)}}" alt="Apple Cinema 30&quot;" class=img-responsive />
+						</div>
+						<span class="label label-sale">SKU: {{$products->ProductSKU}}</span>
+						<a class="quickview iframe-link visible-lg" data-fancybox-type=iframe href="/quickview/{{Str::slug($products->ProductName)}}"> Quickview</a>
+						</div>
+						<div class=right-block>
+						<div class=caption>
+						<h4><a href="/product/{{Str::slug($products->ProductName)}}">{{$products->ProductName}}</a></h4>
+						<div class=ratings>
+						<div class=rating-box>
+						<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+						<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+						<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+						<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+						<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+						</div>
+						</div>
+						<div class=price>
+							@if (strtotime($products->sales->first()->startdate)<=strtotime(date('Y-m-d')) && strtotime($products->sales->first()->enddate)>=strtotime(date('Y-m-d')))
+							
+							<span class=price-new>Rs: {{$products->ProductPrice}} /- PKR</span>
+							<span class=price-old>Rs: {{$products->sales->first()->sale}} /- PKR</span>
+								
+							@else
+							<span class=price-new>Rs: {{$products->ProductPrice}} /- PKR</span>
+							@endif
+								
+							
+						</div>
+						</div>
+						<div class=button-group>
+						
+								
+								
+										<a class="quickview iframe-link visible-lg" data-fancybox-type=iframe href="/quickview/{{Str::slug($products->ProductName)}}">
+											<button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button>
+										</a>
+									   {{-- <button class="wishlist" type=button data-toggle=tooltip title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
+									   <button class=compare type=button data-toggle=tooltip title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button> --}}
+					   
+							   
+						</div>
+						
+						</div>
+						</div>
+						
+						
+						</div><!-----ltabs-item product-layout----->
+										
+					{{-- index page product card end --}}
+					</div>
+						
                 @endforeach
             @endif    
                         

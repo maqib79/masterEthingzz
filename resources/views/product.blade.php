@@ -19,7 +19,7 @@
 
         @endif
     @else
-        <li><a href="category/{{Str::slug($data['Products']->category->CategoryName)}}">{{$data['Products']->category->CategoryName}}</a></li>
+        <li><a href="/category/{{Str::slug($data['Products']->category->CategoryName)}}">{{$data['Products']->category->CategoryName}}</a></li>
         <li><a href="/product/{{Str::slug($data['Products']->ProductName)}}">{{$data['Products']->ProductName}}</a></li>
 
     @endif

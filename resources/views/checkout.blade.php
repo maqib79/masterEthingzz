@@ -13,6 +13,9 @@
   <!--Middle Part Start-->
   <div id="content" class="col-sm-12">
    <div class="so-onepagecheckout ">
+     <form method="POST" action="/checkoutproceed">
+      @csrf
+
   <div class="col-left col-sm-3">
   
    <div class="panel panel-default">
@@ -23,15 +26,15 @@
   <fieldset id="account">
    <div class="form-group required">
   <label for="input-payment-firstname" class="control-label">Full Name</label>
-  <input type="text" class="form-control" id="input-payment-firstname" placeholder="First Name" value="" name="firstname">
+  <input type="text" class="form-control" id="input-payment-firstname" placeholder="First Name" value="" name="firstname" required>
    </div>
    <div class="form-group required">
   <label for="input-payment-email" class="control-label">E-Mail</label>
-  <input type="text" class="form-control" id="input-payment-email" placeholder="E-Mail" value="" name="email">
+  <input type="email" class="form-control" id="input-payment-email" placeholder="E-Mail" value="" name="email" required>
    </div>
    <div class="form-group required">
   <label for="input-payment-telephone" class="control-label">Mobile / Phone</label>
-  <input type="text" class="form-control" id="input-payment-telephone" placeholder="Mobile / Phone" value="" name="telephone">
+  <input type="text" class="form-control" id="input-payment-telephone" placeholder="Mobile / Phone" value="" name="telephone" required>
    </div>
   </fieldset>
    </div>
@@ -44,7 +47,7 @@
   <fieldset id="address" class="required">
    <div class="form-group required">
   <label for="input-payment-address-1" class="control-label">Address 1</label>
-  <input type="text" class="form-control" id="input-payment-address-1" placeholder="Address 1" value="" name="address_1">
+  <input type="text" class="form-control" id="input-payment-address-1" placeholder="Address 1" value="" name="address_1" required>
    </div>
    <div class="form-group">
   <label for="input-payment-address-2" class="control-label">Address 2</label>
@@ -52,7 +55,7 @@
    </div>
    <div class="form-group required">
   <label for="input-payment-city" class="control-label">City</label>
-  <input type="text" class="form-control" id="input-payment-city" placeholder="City" value="" name="city">
+  <input type="text" class="form-control" id="input-payment-city" placeholder="City" value="" name="city" required>
    </div>
   
   
@@ -77,17 +80,17 @@
   <p>Please select the preferred shipping method to use on this order.</p>
   <div class="radio">
    <label>
-  <input type="radio" name="Flat Shipping Rate">
+  <input type="radio" name="Flat_Shipping_Rate" value="0">
   Self Pickup (Free) - Rs 00/- </label>
   </div>
   <div class="radio">
    <label>
-  <input type="radio" name="Flat Shipping Rate">
+  <input type="radio" name="Flat_Shipping_Rate" value="150">
   Flat Shipping (Within City) - Rs 150/- </label>
   </div>
   <div class="radio">
    <label>
-  <input type="radio" name="Flat Shipping Rate">
+  <input type="radio" name="Flat_Shipping_Rate" value="250">
   Flat Shipping (Out of City) - Rs 250/- </label>
   </div>
   
@@ -101,16 +104,16 @@
   <p>Please select the preferred payment method to use on this order.</p>
   <div class="radio">
    <label>
-  <input type="radio" checked="checked" name="Cash On Delivery">Cash On Delivery</label>
+  <input type="radio" checked="checked" name="Payment_method" value="Cash On Delivery">Cash On Delivery</label>
   </div>
   
   <div class="radio">
    <label>
-  <input type="radio" name="Paypal">Credit Card</label>
+  <input type="radio" name="Payment_method" value="Credit Card">Credit Card</label>
   </div>
       <div class="radio">
    <label>
-  <input type="radio" name="Paypal">Direct Bank Transfer</label>
+  <input type="radio" name="Payment_method" value="Direct Bank Transfer">Direct Bank Transfer</label>
   </div>
   </div>
   </div>
@@ -150,7 +153,7 @@
    <span>I have read and agree to the <a class="agree" href="#"><b>Terms &amp; Conditions</b></a></span> </label>
   <div class="buttons">
    <div class="pull-right">
-  <input type="button" class="btn btn-primary" id="button-confirm" value="Confirm Order">
+  <input type="submit" class="btn btn-primary" id="button-confirm" value="Confirm Order">
    </div>
   </div>
    </div>
@@ -158,6 +161,7 @@
   </div>
    </div>
   </div>
+</form>
    </div>
   </div>
   <!--Middle Part End -->

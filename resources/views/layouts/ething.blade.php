@@ -68,8 +68,8 @@
 </ul>
 </li>
 <li class=wishlist_cus><a href=wishlist.php id=wishlist-total_cus class=top-link-wishlist title="Wish List (2)"><span><i class="fa fa-heart" aria-hidden="true"></i> Favourite (2)</span></a></li>
-<li class=login_cus><a href=cart.php title="Shopping Cart"><span><i class="fa fa-shopping-basket" aria-hidden="true"></i> Shopping Cart</span></a></li>
-<li class=checkout_cus><a href=checkout.php class=top-link-checkout title=Checkout><span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Checkout</span></a></li>
+<li class=login_cus><a href="/cart" title="Shopping Cart"><span><i class="fa fa-shopping-basket" aria-hidden="true"></i> Shopping Cart</span></a></li>
+<li class=checkout_cus><a href="/checkout" class=top-link-checkout title=Checkout><span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Checkout</span></a></li>
 </ul>
 </div>
 </div>
@@ -80,7 +80,7 @@
 <div class=container>
 <div class=row>
 <div class="navbar-logo col-md-3 col-sm-12 col-xs-12">
-<a href=index.php><img src="{{asset('storage/image/demo/logos/theme_logo.png')}}" title="Your Store" alt="Your Store"/></a>
+<a href="/"><img src="{{asset('storage/image/demo/logos/theme_logo.png')}}" title="Your Store" alt="Your Store"/></a>
 </div>
 
 <div id=sosearchpro class="col-sm-7 search-pro">
@@ -322,7 +322,7 @@ Navigation
 </li>
 <li class="with-sub-menu hover">
 <p class="close-menu"></p>
-<a href="https://ethingzz.com/maincategory/Fashions-accessory" class="clearfix">
+<a href="/category/fashions-accessory" class="clearfix">
 <strong>Fashion</strong>
 <img class="label-hot" src="https://ethingzz.com/image/theme/icons/hot-icon.png" alt="icon items">
 <b class="caret"></b>
@@ -336,9 +336,9 @@ Navigation
 <div class="title-submenu">Fashions Accessory</div>
 <div>
 <ul class="row-list">
-<li><a href="https://ethingzz.com/category/Men-Fashion">Mens Fashion</a></li>
-<li><a href="https://ethingzz.com/category/Women-Fashion">Womens Fashion</a></li>
-<li><a href="https://ethingzz.com/category/Kids-Fashion">Kids Fashion</a></li>
+<li><a href="/category/men-fashion">Mens Fashion</a></li>
+<li><a href="/category/women-fashion">Womens Fashion</a></li>
+<li><a href="/category/kids-fashion">Kids Fashion</a></li>
 </ul>
 </div>
 </div>
@@ -348,9 +348,9 @@ Navigation
 <div class="title-submenu">Summer Collection</div>
 <div>
 <ul class="row-list">
-<li><a href="https://ethingzz.com/category/Summer-Mens-Collection">Mens Collection</a></li>
-<li><a href="https://ethingzz.com/category/Summer-Womens-Collection">Womens Collection</a></li>
-<li><a href="https://ethingzz.com/category/Summer-Kids-Collection">Kids Collection</a></li>
+<li><a href="/category/summer-mens-collection">Mens Collection</a></li>
+<li><a href="/category/summer-women-fashion">Womens Collection</a></li>
+<li><a href="/category/summer-kids-fashion">Kids Collection</a></li>
 </ul>
 </div>
 </div>
@@ -360,9 +360,9 @@ Navigation
 <div class="title-submenu">Winter Collection</div>
 <div>
 <ul class="row-list">
-<li><a href="https://ethingzz.com/category/Winter-Mens-Collection">Mens Collection</a></li>
-<li><a href="https://ethingzz.com/category/Winter-Womens-Collection">Womens Collection</a></li>
-<li><a href="https://ethingzz.com/category/Winter-Kids-Collection">Kids Collection</a></li>
+<li><a href="/category/winter-mens-collection">Mens Collection</a></li>
+<li><a href="/category/winter-women-fashion">Womens Collection</a></li>
+<li><a href="/category/winter-kids-fashion">Kids Collection</a></li>
 </ul>
 </div>
 </div>
@@ -372,9 +372,9 @@ Navigation
 <div class="title-submenu">Hand Bag &amp; Sandals</div>
 <div>
 <ul class="row-list">
-<li><a href="https://ethingzz.com/category/Hand-Bags">Hand Bags</a></li>
-<li><a href="https://ethingzz.com/category/Sandals">Sandals</a></li>
-<li><a href="https://ethingzz.com/category/Ladies-Shoes">Ladies Shoes</a></li>
+<li><a href="/category/hand-Bags">Hand Bags</a></li>
+<li><a href="/category/sandals">Sandals</a></li>
+<li><a href="/category/ladies-shoes">Ladies Shoes</a></li>
 </ul>
 </div>
 </div>
@@ -386,7 +386,7 @@ Navigation
 </li>
 <li class="with-sub-menu hover">
 <p class="close-menu"></p>
-<a href="https://ethingzz.com/maincategory/Health-Beauty" class="clearfix">
+<a href="/category/health-beauty" class="clearfix">
 <strong>Health &amp; Beauty</strong>
 <img class="label-hot" src="https://ethingzz.com/image/theme/icons/hot-icon.png" alt="icon items">
 <!---<b class=caret></b>--->
@@ -395,7 +395,7 @@ Navigation
 </li>
 <li class="with-sub-menu hover">
 <p class="close-menu"></p>
-<a href="https://ethingzz.com/maincategory/Toys-Hobbies-Gifts-Crafts-Babies" class="clearfix">
+<a href="/category/toys-hobbies-gifts-crafts" class="clearfix">
 <strong>Toys, Hobbies, Gifts</strong>
 <span class="label"></span>
 <!---<b class=caret></b>--->
@@ -404,7 +404,7 @@ Navigation
 </li>
 <li class="with-sub-menu hover">
 <p class="close-menu"></p>
-<a href="https://ethingzz.com/maincategory/Home-and-Garden" class="clearfix">
+<a href="/category/home-garden" class="clearfix">
 <strong>Home and Garden</strong>
 <!---<b class=caret></b>--->
 </a>
@@ -413,14 +413,14 @@ Navigation
 
 <li class="hidden-md">
 <p class="close-menu"></p>
-<a href="https://ethingzz.com/maincategory/Islamic-accessory" class="clearfix">
+<a href="/category/islamic-accessory" class="clearfix">
 <strong>Islamic Accessory</strong>
 </a>
 </li>
 
 <li class="hidden-md">
 <p class="close-menu"></p>
-<a href="https://ethingzz.com/maincategory/Other-Categories" class="clearfix">
+<a href="/category/other-categories" class="clearfix">
 <strong>Other Categories</strong>
 </a>
 </li>
@@ -732,7 +732,7 @@ autocomplete('#aa-search-input',
            }
        }
    }).on('autocomplete:selected', function (event, suggestion, dataset) {
-      // var aa= window.location.origin + '/shop/' + suggestion.slug;
+       var aa= window.location.origin + '/shop/' + suggestion.slug;
        
       var a = str.split(_highlightResult.ProductName.value).join('-'); 
        window.location.href = window.location.origin + '/search/' + a;

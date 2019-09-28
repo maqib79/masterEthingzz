@@ -167,8 +167,11 @@
                         
                         <input type="hidden" name="id" value="{{$item->id}}">
                        
-                       <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button>
-                       <button class="wishlist" type=button data-toggle=tooltip title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
+                        <a class="quickview iframe-link visible-lg" data-fancybox-type=iframe href="/quickview/{{Str::slug($item->ProductName)}}">
+                            <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button>
+                        </a>
+                        
+                        <button class="wishlist" type=button data-toggle=tooltip title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
                        {{-- <button class=compare type=button data-toggle=tooltip title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button> --}}
                         
                 </form>
@@ -286,7 +289,7 @@
                 <div class=button-group>
                        
                         <a class="quickview iframe-link visible-lg" data-fancybox-type=iframe href="/quickview/{{Str::slug($item->ProductName)}}">
-                            <button class="addcart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button>
+                            <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button>
                         </a>
                        {{-- <button class="wishlist" type=button data-toggle=tooltip title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
                        <button class=compare type=button data-toggle=tooltip title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button> --}}
