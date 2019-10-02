@@ -16,8 +16,12 @@ class ProductsController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         
         $products = Product::paginate(15);
+=======
+        $products = Product::paginate(12);
+>>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
         return view('viewproduct',compact('products'));
     }
     /**
@@ -118,10 +122,16 @@ class ProductsController extends Controller
                 'ProductPrice'=> 'required',
                 'ProductInstock'=> 'required',
                 'ProductQuantity'=> 'required',
+<<<<<<< HEAD
                 // 'ProductSKU'=> 'required|unique:products,ProductSKU',
                 'ProductSKU'=> 'required',
                 'ProductMtitle'=> 'nullable',
                 'ProductMDesc'=> 'nullable',
+=======
+                'ProductSKU'=> 'required',
+                'ProductMtitle'=> 'required',
+                'ProductMDesc'=> '',
+>>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
                 'ProductBrand'=> 'required',
                 'ProductWarranty'=> 'required',
                 'ProductDesc'=> 'required',

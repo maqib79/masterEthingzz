@@ -89,7 +89,7 @@ class CustomController extends Controller
     }
     public function category($category) {
         // $users = DB::table('orders')->get();
-        //  dd(Cart::content());
+         dd(Cart::content());
        
         $data['Categories'] = Category::ParentCategory()->get();
         $cat=str_replace('-', ' ', $category);
