@@ -80,7 +80,7 @@
 <div class=container>
 <div class=row>
 <div class="navbar-logo col-md-3 col-sm-12 col-xs-12">
-<a href="/"><img src="{{asset('storage/image/demo/logos/theme_logo.png')}}" title="Your Store" alt="Your Store"/></a>
+<a href="/"><img src="{{asset('storage/logo/theme_logo_l.png')}}" title="Your Store" alt="Your Store"/></a>
 </div>
 
 <div id=sosearchpro class="col-sm-7 search-pro">
@@ -102,7 +102,7 @@
 <option value=27>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Men Watches</option>
 </select>
 </div>
-<input type="search" id="aa-search-input" class="aa-input-search form-control" placeholder="Search with algolia..." name="search"
+<input type="search" id="aa-search-input" class="aa-input-search form-control" placeholder="Search Product" name="search"
                     autocomplete="off" />
 
 <span class=input-group-btn>

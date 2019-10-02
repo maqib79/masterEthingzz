@@ -9,13 +9,60 @@ img.img.thumbnail {
   display: inline-block;
 }
 
+.vertical ul.megamenu > li > a {
+  padding: 3px 0 4.4px 12px;
+}
 
+/* .vertical-wrapper ul.megamenu > li > a img {
+  width: 24px !important;
+} */
 
+#yt_header_right .first-block {
+  margin-bottom: 0px !important;
+}
 
+li.item-vertical.style1.with-sub-menu.hover img {
+  width: 24px !important;
+}
 
+.product-item-container .caption h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+a.quickview.iframe-link.visible-lg {
+  display: inline-block !important;
+}
 
+p.xyz.addToCart {
+  margin-bottom: 0;
+  background: #F4A137;
+  padding: 10px 12px 10px 12px;
+  font-weight: bolder;
+  color: #fff;
+}
+p.xyz.addToCart:hover {
+  cursor: pointer;
+}
 
+.add-to-links.wish_comp {
+  display: inline-block;
+}
+ul.blank.list-inline {
+  margin: -1px !important;
+}
+.mfp-close-btn-in .mfp-close {
+  background: #F4A137;
+  margin: 0;
+}
+.box-review.form-group {
+  margin-bottom: 0;
+}
+span#algolia-autocomplete-listbox-0 {
+  padding: 0 0 10px 10px;
+  background: #fff !important;
+}
 
 /**********Custom CSS CLOSE**********/
 
@@ -29,7 +76,7 @@ img.img.thumbnail {
     display: none;
 }
 ul.megamenu .sub-menu .content {
-    padding: 10px 0 0px 16px;
+    padding: 3px 0 0px 18px;
 }
 
 ul.megamenu li .sub-menu .content .static-menu > .menu > ul > li {
@@ -55,6 +102,7 @@ ul.megamenu li .sub-menu .content .static-menu a.main-menu {
 
 .navbar-logo.col-md-3.col-sm-12.col-xs-12 {
     width: 21%;
+    margin-top: -8px;
 }
 
 .header-center {
@@ -1474,10 +1522,11 @@ STRUCTURE
 	  Header Wrapper
 **************************************************************/
 .header-top {
-  background: #eee; }
+  background: #eee;
+  max-height: 34px; }
 
 .header-center {
-  padding: 35px 0; }
+  padding: 24px 0; }
 
 .header-bottom {
   background: #666666;
@@ -1902,7 +1951,7 @@ STRUCTURE
       margin-bottom: 0;
       white-space: nowrap; }
     .shopping_cart a.top_cart .handle {
-      background: url("../image/theme/icons/icon_minicart.png") no-repeat 8px 8px;
+      background: url("../storage/icon/icon_minicart.png") no-repeat 8px 8px;
       background-color: #F4A137;
       width: 36px;
       height: 34px;
@@ -2103,7 +2152,7 @@ STRUCTURE
     width: 20px;
     height: 27px;
     border: 1px solid #ddd;
-    background-image: url("../image/theme/icons/ico-slider.png");
+    background-image: url("../storage/icon/ico-slider.png");
     background-repeat: no-repeat;
     background-color: #fff;
     display: inline-block;
@@ -2139,7 +2188,7 @@ STRUCTURE
       width: 20px;
       height: 27px;
       border: 1px solid #ddd;
-      background-image: url("../image/theme/icons/ico-slider.png");
+      background-image: url("../storage/icon/ico-slider.png");
       background-repeat: no-repeat;
       background-color: #fff;
       display: inline-block;
@@ -2202,7 +2251,7 @@ STRUCTURE
     width: 20px;
     height: 27px;
     border: 1px solid #ddd;
-    background-image: url("../image/theme/icons/ico-slider.png");
+    background-image: url("../storage/icon/ico-slider.png");
     background-repeat: no-repeat;
     background-color: #fff;
     display: inline-block;
@@ -2685,7 +2734,7 @@ select {
   -webkit-box-shadow: none !important;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: url("../image/theme/icons/bg-selectbox.png") no-repeat right center #fff; }
+  background: url("../storage/icon/bg-selectbox.png") no-repeat right center #fff; }
 
 textarea {
   height: auto;
@@ -3545,7 +3594,7 @@ h2.title-category {
           display: none; }
   .left-content-product .content-product-right .title-product h1 {
     font-size: 22px;
-    margin: 0 0 10px;
+    margin: 0;
     font-weight: bold; }
   .left-content-product .content-product-right .box-review .ratings {
     display: inline-block;
@@ -4484,7 +4533,7 @@ div.tab-slider {
         width: 20px;
         height: 27px;
         border: 1px solid #ddd;
-        background-image: url("../image/theme/icons/ico-slider.png");
+        background-image: url("../storage/icon/ico-slider.png");
         background-repeat: no-repeat;
         background-color: #fff;
         display: inline-block;

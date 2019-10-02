@@ -16,10 +16,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(12);
         return view('viewproduct',compact('products'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -118,7 +117,7 @@ class ProductsController extends Controller
                 'ProductPrice'=> 'required',
                 'ProductInstock'=> 'required',
                 'ProductQuantity'=> 'required',
-                'ProductSKU'=> 'required|unique:products,ProductSKU',
+                'ProductSKU'=> 'required',
                 'ProductMtitle'=> 'required',
                 'ProductMDesc'=> '',
                 'ProductBrand'=> 'required',

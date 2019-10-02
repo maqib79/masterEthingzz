@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>
-<title>Ethingzz - One Stop Solution</title>
 <meta charset=utf-8>
 <meta name=keywords content="boostrap, responsive, html5, css3, jquery, theme, multicolor, parallax, retina, business"/>
 <meta name=author content=Magentech>
@@ -28,10 +27,17 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head><!----Top Section END----->
+
+<style>
+ul.blank.list-inline {
+  margin: -1px !important;
+}
+</style>
+
 <body class="common-home res layout-home1">
 <div id=wrapper class="wrapper-full banners-effect-7">
 <!-- Main Container  -->
-<div class="main-container container">
+<div class="main-container">
     {{-- <ul class="breadcrumb">
     <li><a href="/"><i class="fa fa-home"></i></a></li>
     @if ($data['Products']->category->getParentCategory)
@@ -62,7 +68,7 @@
     <div class="row">
     <div class="content-product-left class-honizol col-sm-6 col-xs-12 ">
     <div class="large-image">
-    <img itemprop="image" class="product-image-zoom" src="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" data-zoom-image="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" title="Bint Beef" alt="Bint Beef">
+    <img itemprop="image" class="product-image-zoom" src="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" data-zoom-image="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" title="" alt="">
     </div>
     <div id="thumb-slider1" class="">  
 
@@ -82,7 +88,7 @@
             
             @foreach ($data['Products']->productimages as $item)
             
-            <img class="img thumbnail" src="{{asset('storage/'.$item->name)}}" title="Bint Beef" alt="{{asset('storage/'.$item->alttag)}}">
+            <img class="img thumbnail" src="{{asset('storage/'.$item->name)}}" title="" alt="{{asset('storage/'.$item->alttag)}}">
            @endforeach
 
 
@@ -94,21 +100,6 @@
     <div class="content-product-right col-sm-6 col-xs-12">
     <div class="title-product">
     <h1>{{$data['Products']->ProductName}}</h1>
-    </div>
-    <!-- Review ---->
-    <div class="box-review form-group">
-    <div class="ratings">
-    <div class="rating-box">
-    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-    </div>
-    </div>
-    
-    <a class="reviews_button" href="#" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0 reviews</a> |
-    <a class="write_review_button" href="#" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Write a review</a>
     </div>
 
     <div class="product-label form-group">
@@ -128,63 +119,35 @@
     
     <div class="product-box-desc">
     <div class="inner-box-desc">
-    <div class="price-tax"><span>Ex Tax:</span> $60.00</div>
-    <div class="brand"><span>Brand:</span><a href="#">{{$data['Products']->ProductBrand}}</a> </div>
-    <div class="model"><span>Product SKU:</span>{{$data['Products']->ProductSKU}}</div>
+    <div class="price-tax"><span>Inclusive GS-Tax:</span> 17%/-</div>
+    <div class="brand"><span>Brand: </span><a href="#">{{$data['Products']->ProductBrand}}</a> </div>
+    <div class="model"><span>Product SKU: </span>{{$data['Products']->ProductSKU}}</div>
     </div>
     </div>
     
     
     <div id="product">
-    <h4>Sepcifications</h4>
+    <h4 style="font-weight: bold; margin-top: 0px;">Sepcifications</h4>
     {{$data['Products']->ProductDesc}}
-    <div class="image_option_type form-group required">
-    <label class="control-label">Colors</label>
-    <ul class="product-options clearfix"id="input-option231">
-    <li class="radio">
-    <label>
-    <input class="image_radio" type="radio" name="option[231]" value="33">
-    <img src="image/demo/colors/blue.jpg" data-original-title="blue +$12.00" class="img-thumbnail icon icon-color"> <i class="fa fa-check"></i>
-    <label> </label>
-    </label>
-    </li>
-    <li class="radio">
-    <label>
-    <input class="image_radio" type="radio" name="option[231]" value="34">
-    <img src="image/demo/colors/brown.jpg" data-original-title="brown -$12.00" class="img-thumbnail icon icon-color"> <i class="fa fa-check"></i>
-    <label> </label>
-    </label>
-    </li>
-    <li class="radio">
-    <label>
-    <input class="image_radio" type="radio" name="option[231]" value="35"> <img src="image/demo/colors/green.jpg"
-    data-original-title="green +$12.00" class="img-thumbnail icon icon-color"> <i class="fa fa-check"></i>
-    <label> </label>
-    </label>
-    </li>
-    <li class="selected-option">
-    </li>
-    </ul>
-    </div>
+
     
     <form>
     <div class="form-group box-info-product">
-    <div class="option quantity">
-    <div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
-    <label>Qty</label>
-    <input class="form-control" type="text" name="quantity"
-    value="1">
-    <input type="hidden" name="product_id" value="50">
-    <span class="input-group-addon product_quantity_down">−</span>
-    <span class="input-group-addon product_quantity_up">+</span>
-    </div>
-    </div>
+        <div class="option quantity">
+            <div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
+                <label>Qty </label>
+                <input class="form-control" type="text" name="quantity" value="1">
+                <input type="hidden" name="product_id" value="50">
+                <span class="input-group-addon product_quantity_down">− </span>
+                <span class="input-group-addon product_quantity_up">+ </span>
+            </div>
+        </div>
     <div class="cart">
-                               {{-- <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button> --}}
+            {{-- <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button> --}}
             <input type="hidden" name="id" value="{{$data['Products']->id}}">
             {{-- <input type="button" title="" value="Add to Cart" id="button-cart" class="btn btn-mega btn-lg" data-original-title="Add to Cart"> --}}
             {{-- <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick="cart.add('50');"><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button> --}}
-            <p class="xyz addToCart"><i class="fa fa-shopping-cart"></i>Add to Cart</p>
+            <p class="xyz addToCart"></i>ADD TO CART</p>
         </form>
     </div>
     <div class="add-to-links wish_comp">
@@ -194,18 +157,6 @@
     onclick="wishlist.add('50');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i>
     </a>
     </li>
-    <li class="compare">
-    <a class="icon" data-toggle="tooltip" title=""
-    onclick="compare.add('50');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i>
-    </a>
-    </li>
-
-<li class="addToCart">
-        <a class="icon" data-toggle="tooltip" title=""
-        onclick="cart.add('50');" data-original-title="Add to cart"><i class="fa fa-shopping-cart"></i>
-        </a>
-</li>
-
     </ul>
     </div>
     
@@ -217,30 +168,6 @@
     </div>
     </div>
     </div>
-    
-    <section class="col-lg-2 hidden-sm hidden-md hidden-xs slider-products">
-    <div class="module col-sm-12 four-block">
-    <div class="modcontent clearfix">
-    <div class="policy-detail">
-    <div class="banner-policy">
-    <div class="policy policy1">
-    <a href="#"> <span class="ico-policy">&nbsp;</span> 90 day
-    <br> money back </a>
-    </div>
-    <div class="policy policy2">
-    <a href="#"> <span class="ico-policy">&nbsp;</span> In-store exchange </a>
-    </div>
-    <div class="policy policy3">
-    <a href="#"> <span class="ico-policy">&nbsp;</span> lowest price guarantee </a>
-    </div>
-    <div class="policy policy4">
-    <a href="#"> <span class="ico-policy">&nbsp;</span> shopping guarantee </a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
     </div>
     
  

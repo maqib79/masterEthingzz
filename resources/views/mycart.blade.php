@@ -41,14 +41,14 @@
         <td class=text-right>{{$data['TotalAmountCart']}} PKR</td>
         </tr>
         <tr>
-        <td class=text-left><strong>Eco Tax (-2.00)</strong>
+        <td class=text-left><strong>Inclusive GST</strong>
         </td>
-        <td class=text-right>$2.00</td>
+        <td class=text-right>17%/-</td>
         </tr>
         <tr>
         <td class=text-left><strong>Total</strong>
         </td>
-        <td class=text-right>$1,262.00</td>
+        <td class=text-right> PKR-</td>
         </tr>
         </tbody>
         </table>

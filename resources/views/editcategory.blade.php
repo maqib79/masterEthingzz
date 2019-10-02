@@ -12,8 +12,8 @@
 
                     <form action="/admin/category/{{$category->id}}" method="POST" enctype="multipart/form-data">
                         @method('PATCH')
-                        <div class="form-group" mt='5'>
-                            <label for="exampleInputEmail1">Edit Category</label>
+                        <div class="form-group mt-4">
+                            <h3 for="exampleInputEmail1">Edit Category</h3>
                         <input type="text" class="form-control" name="CategoryName" placeholder="Add Category" value="{{$category->CategoryName}}">
                             <div style="color:red">{{$errors->first('CategoryName')}}</div>
                         </div>
@@ -40,7 +40,7 @@
 
                             </div>
                 
-                            <div class="form-group">
+                            <div class="form-group mt-4">
                                 <label for="exampleInputPassword1">Category Description:</label>
                                 <textarea  class="form-control description" name="CategoryDescription"  rows="3">{{$category->CategoryMDescription}}</textarea>
                                 <div style="color:red">{{$errors->first('CategoryDescription')}}</div>
@@ -60,7 +60,7 @@
                                 
                             </div>
                             
-                        <input type="submit" name="btn" class="btn btn-primary" value="Update Category">
+                        <input type="submit" name="btn" class="btn btn-primary mb-4" style="float: right;" value="Update Category">
                         @csrf
 
                     </form>

@@ -17,9 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-
-
     <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
 
     <!-- Styles -->
@@ -66,6 +63,10 @@ ion-icon.md.hydrated {
     padding: 0px 15px 0 0;
     position: relative;
     top: 2px;
+}
+
+.tox.tox-tinymce {
+    width: 100% !important;
 }
 
     </style>
@@ -140,8 +141,10 @@ ion-icon.md.hydrated {
           <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action bg-light"><ion-icon name="reorder"></ion-icon>Dashboard</a>
             <a href="/admin/seopanel" class="list-group-item list-group-item-action bg-light"><ion-icon name="search"></ion-icon>SEO Pannel</a>
-            <a href="/admin/banner/create" class="list-group-item list-group-item-action bg-light"><ion-icon name="expand"></ion-icon>Banners</a>
+            <a href="/admin/banner/create" class="list-group-item list-group-item-action bg-light"><ion-icon name="add"></ion-icon>Add Banners</a>
+            <a href="/admin/banner" class="list-group-item list-group-item-action bg-light"><ion-icon name="expand"></ion-icon>View Banners</a>
             <a href="/admin/category/create" class="list-group-item list-group-item-action bg-light"><ion-icon name="add"></ion-icon>Add Category</a>
+            <a href="/admin/category" class="list-group-item list-group-item-action bg-light"><ion-icon name="menu"></ion-icon>View Category</a>
             <a href="/admin/product/create" class="list-group-item list-group-item-action bg-light"><ion-icon name="add"></ion-icon>Add Product</a>
             <a href="/admin/product" class="list-group-item list-group-item-action bg-light"><ion-icon name="apps"></ion-icon>All Stock List</a>
             <a href="/admin/urlredirect/create" class="list-group-item list-group-item-action bg-light"><ion-icon name="refresh"></ion-icon>URL Redirect</a>

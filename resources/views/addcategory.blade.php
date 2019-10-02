@@ -13,7 +13,7 @@
                     <form action="/admin/category" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group" mt='5'>
-                            <label for="exampleInputEmail1">Add Category</label>
+                            <h4 class="mt-4" for="exampleInputEmail1">Add Category</h4>
                         <input type="text" class="form-control" name="CategoryName" placeholder="Add Category" value="{{old('CategoryName')}}">
                             <div style="color:red">{{$errors->first('CategoryName')}}</div>
                         </div>
@@ -68,7 +68,7 @@
                                 
                             </div>
                             
-                        <input type="submit" name="btn" class="btn btn-primary"  value="Add Category">
+                        <input type="submit" name="btn" class="btn btn-primary mb-4"  value="Add Category">
                     </form>
              
 </div>
