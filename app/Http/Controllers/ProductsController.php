@@ -16,9 +16,12 @@ class ProductsController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         
         $products = Product::paginate(12);
+=======
+>>>>>>> parent of f33e245... Category image issue resolved
         $products = Product::all();
         return view('viewproduct',compact('products'));
     }
@@ -120,12 +123,18 @@ class ProductsController extends Controller
                 'ProductPrice'=> 'required',
                 'ProductInstock'=> 'required',
                 'ProductQuantity'=> 'required',
+<<<<<<< HEAD
 
                 // 'ProductSKU'=> 'required|unique:products,ProductSKU',
                 'ProductSKU'=> 'required',
                 'ProductMtitle'=> 'nullable',
                 'ProductMDesc'=> 'nullable',
                 'ProductSKU'=> 'required',
+=======
+                'ProductSKU'=> 'required|unique:products,ProductSKU',
+                'ProductMtitle'=> 'required',
+                'ProductMDesc'=> '',
+>>>>>>> parent of f33e245... Category image issue resolved
                 'ProductBrand'=> 'required',
                 'ProductWarranty'=> 'required',
                 'ProductDesc'=> 'required',

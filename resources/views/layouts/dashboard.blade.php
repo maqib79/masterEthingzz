@@ -69,6 +69,7 @@ ion-icon.md.hydrated {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .tox.tox-tinymce {
     width: 100% !important;
 }
@@ -79,6 +80,9 @@ ion-icon.md.hydrated {
 }
 
 >>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
+=======
+
+>>>>>>> parent of f33e245... Category image issue resolved
 =======
 
 >>>>>>> parent of f33e245... Category image issue resolved

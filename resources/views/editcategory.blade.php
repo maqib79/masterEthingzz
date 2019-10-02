@@ -41,6 +41,7 @@
                             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="CategoryBanner" >
                                 <label class="custom-file-label" for="validatedCustomFile">Category Banner</label>
@@ -49,6 +50,10 @@
                 
 >>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
                             <div class="form-group mt-4">
+=======
+                
+                            <div class="form-group">
+>>>>>>> parent of f33e245... Category image issue resolved
 =======
                 
                             <div class="form-group">

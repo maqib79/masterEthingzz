@@ -38,6 +38,7 @@
         <tr>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <td class=text-center style=width:70px>
                     <a href=product.php> <img src="{{asset('storage/'.$item->options->image)}}" style=width:70px alt="{{$item->name}}" title="{{$item->name}}" class=preview> </a>
                 </td>
@@ -86,15 +87,23 @@
 =======
 =======
 >>>>>>> parent of f33e245... Category image issue resolved
+=======
+>>>>>>> parent of f33e245... Category image issue resolved
         <td class=text-left><strong>Sub-Total</strong>
         </td>
         <td class=text-right>{{$data['TotalAmountCart']}} PKR</td>
         </tr>
         <tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <td class=text-left><strong>Inclusive GST</strong>
         </td>
         <td class=text-right>17%/-</td>
+=======
+        <td class=text-left><strong>Eco Tax (-2.00)</strong>
+        </td>
+        <td class=text-right>$2.00</td>
+>>>>>>> parent of f33e245... Category image issue resolved
 =======
         <td class=text-left><strong>Eco Tax (-2.00)</strong>
         </td>
@@ -105,7 +114,11 @@
         <td class=text-left><strong>Total</strong>
         </td>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <td class=text-right> PKR-</td>
+=======
+        <td class=text-right>$1,262.00</td>
+>>>>>>> parent of f33e245... Category image issue resolved
 =======
         <td class=text-right>$1,262.00</td>
 >>>>>>> parent of f33e245... Category image issue resolved
@@ -121,6 +134,9 @@
         
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
+=======
+>>>>>>> parent of f33e245... Category image issue resolved
 =======
 >>>>>>> parent of f33e245... Category image issue resolved
