@@ -38,14 +38,18 @@
                         <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="BlogImage">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <label class="custom-file-label" for="customFile">Choose file (Featured Image)</label> 
 =======
                                 <label class="custom-file-label" for="customFile">Choose file (Featured Image)</label>
 >>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
+=======
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+>>>>>>> parent of f33e245... Category image issue resolved
                         </div>
                 </div>
                 <div class="col-md-2">
-                      <input class="btn btn-primary" type="submit" style="width: 100%;" value="Add Blog">
+                      <input class="btn btn-primary" type="submit" style="width: 100%;" value="Banner Upload">
                 </div>
         </div>
 </form>

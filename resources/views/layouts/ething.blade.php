@@ -80,7 +80,7 @@
 <div class=container>
 <div class=row>
 <div class="navbar-logo col-md-3 col-sm-12 col-xs-12">
-<a href="/"><img src="{{asset('storage/logo/theme_logo_l.png')}}" title="Your Store" alt="Your Store"/></a>
+<a href="/"><img src="{{asset('storage/image/demo/logos/theme_logo.png')}}" title="Your Store" alt="Your Store"/></a>
 </div>
 
 <div id=sosearchpro class="col-sm-7 search-pro">
@@ -102,7 +102,7 @@
 <option value=27>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Men Watches</option>
 </select>
 </div>
-<input type="search" id="aa-search-input" class="aa-input-search form-control" placeholder="Search Product" name="search"
+<input type="search" id="aa-search-input" class="aa-input-search form-control" placeholder="Search with algolia..." name="search"
                     autocomplete="off" />
 
 <span class=input-group-btn>
@@ -562,6 +562,7 @@ Navigation
     <!---    <script src="https://ethingzz.com/js/themejs/fadeimgscroll.js"></script>---><!---allscript Section End--->
     
     <script>
+
         $(document).ready(function(){
             
             $.ajaxSetup({
@@ -569,6 +570,7 @@ Navigation
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
             $("#ordertable").on("click",".qtyUpdate",function(){
         //  $(".qtyUpdate").click(function(){
             var rowId= $(this).attr("id");
@@ -588,7 +590,11 @@ Navigation
             }
         });
           });
+
+
         
+
+
           $("#ordertable").on("click",".removeCart",function(){
         //  $(".qtyUpdate").click(function(){
             var rowId= $(this).attr("id");
@@ -605,6 +611,7 @@ Navigation
                 }
             });
           });
+
           $("#mycart").on("click",".rmv",function(){
             var rowId= $(this).attr("id");
             $.ajax({
@@ -620,8 +627,10 @@ Navigation
                 }
             });
                   });
+
                   
           function refreshmycart(){
+
                $.ajax({    
                     type: "GET",
                     url: "/mycart",             
@@ -631,6 +640,7 @@ Navigation
                         }
                 });
         }
+
         $(".xyz").click(function(){
                 var qty = $("input[name=quantity]").val();
             var id = $("input[name=id]").val();
@@ -655,6 +665,7 @@ Navigation
 }
 });
 }
+
 $("#carttable").on("click",".removeCart",function(){
         //  $(".qtyUpdate").click(function(){
             var rowId= $(this).attr("id");
@@ -675,7 +686,10 @@ window.onload=function(){
     
     cartlist();
     refreshmycart();
+
 }
+
+
         });
 </script>
     
@@ -710,6 +724,7 @@ autocomplete('#aa-search-input',
                        <span>${suggestion._highlightResult.ProductName.value}</span>
                    </div>
                `;
+
                return markup;
            },
            empty: function (result) {
@@ -728,4 +743,5 @@ autocomplete('#aa-search-input',
        }
    });
 })();
+
 </script>

@@ -3,8 +3,9 @@
 @section('content')
 <div class="container" pt='5'>
     <br>
-<h2>Edit Product:</h2>
+<h2>Add New Product:</h2>
 
+<br>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -69,50 +70,25 @@
                             <input type="text" class="form-control" placeholder="Enter Product Price:" name="ProductPrice" value="{{$product->ProductPrice}}">
                             <div style="color:red">{{$errors->first('ProductPrice')}}</div>
                           </div>
+
                           <div class="form-group col-md-3">
                               <label>Product Sale Price:</label>
-                              <input type="text" class="form-control" placeholder="Enter Product Sale Price:" name="sale" value="{{$product->sales->sale}}">
+                              <input type="text" class="form-control" placeholder="Enter Product Sale Price:" name="sale" value="@foreach($product->sales as $item){{$item->sale}}@endforeach">
                               <div style="color:red"></div>
                         </div>
                   
                         <div class="form-group col-md-3">
                                       <label>Sale From:</label>
-                                      <input type="date" class="form-control" placeholder="Enter Product Sale Price:" name="startdate" value="{{$product->sales->startdate}}">
+                                      <input type="date" class="form-control" placeholder="Enter Product Sale Price:" name="startdate" value="@foreach($product->sales as $item){{$item->startdate}}@endforeach">
                                       <div style="color:red"></div>
                         </div>
                   
                         <div class="form-group col-md-3">
                               <label>Sale To:</label>
-                              <input type="date" class="form-control" placeholder="Enter Product Sale Price:" name="enddate" value="{{$product->sales->enddate}}">
+                              <input type="date" class="form-control" placeholder="Enter Product Sale Price:" name="enddate" value="@foreach($product->sales as $item){{$item->enddate}}@endforeach">
                               <div style="color:red"></div>
                         </div>
                         
-                    </div>
-{{-- asd --}}
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Product Brand:</label>
-                            <input type="text" class="form-control" placeholder="Enter Product Brand:" name="ProductBrand" value="{{$product->ProductBrand}}">
-                            <div style="color:red">{{$errors->first('ProductBrand')}}</div>
-                        </div>
-                        <div class="form-group col-md-6">
-                        
-                            <label for="">Product Warranty</label>
-                              <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Warranty(month)</label>
-                                  </div>
-                                  <select class="custom-select" id="inputGroupSelect01" name="ProductWarranty">
-                                    <option value="0">No Warranty</option>
-                                    <option value="3">3</option>
-                                    <option value="6">6</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                  </select>
-                             </div>
-                      
-                          </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
@@ -149,7 +125,7 @@
                     
                     
                     <div class="form-group">
-                        <label>Product Meta Title:</label>
+                        <label>Product Title:</label>
                         <input type="text" class="form-control" placeholder="Enter Product Title:" name="ProductMtitle" value="{{$product->ProductMTitle}}">
                         <div style="color:red">{{$errors->first('ProductMtitle')}}</div>
                     </div>
@@ -165,7 +141,7 @@
                         <label class="custom-file-label" for="customFile">Choose file</label>
                         <div style="color:red">{{$errors->first('ProductImages')}}</div>
                     </div>
-                    <div class="form-group mt-4">
+                    <div class="form-group">
                         <label for="exampleFormControlTextarea1">Product Specification:</label>
                         <textarea class="form-control description" id="" rows="3" name="ProductDesc">{{$product->ProductDesc}}</textarea>
                         <div style="color:red">{{$errors->first('ProductDesc')}}</div>
@@ -175,7 +151,8 @@
                         <textarea class="form-control description" id="" rows="3" name="ProductLongDesc">{{$product->ProductLongDesc}}</textarea>
                         <div style="color:red">{{$errors->first('ProductLongDesc')}}</div>
                    </div>
-
+                    <br>
+                    <br>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadioInline5" value="Index" class="custom-control-input" name="ProductIndex" >
                         <label class="custom-control-label" for="customRadioInline5">Index</label>
@@ -187,10 +164,17 @@
                           <div style="color:red">{{$errors->first('ProductIndex')}}</div>
                     
                     
-                    <input type="submit" class="btn btn-primary mb-3" style="float: right;" value="Update Product">
+                    <input type="submit" class="btn btn-primary mb-2" value="Add Product">
                     
                     
                     </form>
              
 </div>
 @endsection
+
+
+
+
+
+
+

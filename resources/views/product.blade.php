@@ -33,7 +33,7 @@
     <div class="row">
     <div class="content-product-left class-honizol col-sm-6 col-xs-12 ">
     <div class="large-image">
-    <img itemprop="image" class="product-image-zoom" src="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" data-zoom-image="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" title="" alt="">
+    <img itemprop="image" class="product-image-zoom" src="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" data-zoom-image="{{asset('storage/'.$data['Products']->productimages->first()->name)}}" title="Bint Beef" alt="Bint Beef">
     </div>
     <div id="thumb-slider1" class="">  
 
@@ -41,7 +41,7 @@
         {{-- @foreach ($data['Products']->productimages as $item)
                 
             <a data-index="0" class="img thumbnail " data-image="{{asset('storage/'.$item->name)}}" title="{{asset('storage/'.$item->alttag)}}">
-                <img src="{{asset('storage/'.$item->name)}}" title="" alt="{{asset('storage/'.$item->alttag)}}">
+                <img src="{{asset('storage/'.$item->name)}}" title="Bint Beef" alt="{{asset('storage/'.$item->alttag)}}">
             </a>
            @endforeach --}}
         
@@ -53,7 +53,7 @@
             
             @foreach ($data['Products']->productimages as $item)
             
-            <img class="img thumbnail" src="{{asset('storage/'.$item->name)}}" title="" alt="{{asset('storage/'.$item->alttag)}}">
+            <img class="img thumbnail" src="{{asset('storage/'.$item->name)}}" title="Bint Beef" alt="{{asset('storage/'.$item->alttag)}}">
            @endforeach
 
 
@@ -86,7 +86,7 @@
     <div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
         @if (strtotime($data['Products']->sales->startdate)<=strtotime(date('Y-m-d')) && strtotime($data['Products']->sales->enddate)>=strtotime(date('Y-m-d')))
                     
-        <span class=price-new>Rs: {{$data['Products']->sales->sale}} /- PKR</span>
+        <span class=price-new>Rs: {{$data['Products']->sales->first()->sale}} /- PKR</span>
         <span class=price-old>Rs: {{$data['Products']->ProductPrice}} /- PKR</span>
             
         @else
@@ -99,16 +99,44 @@
     
     <div class="product-box-desc">
     <div class="inner-box-desc">
-    <div class="price-tax"><span>Inclusive GST:</span> 17%/-</div>
-    <div class="brand"><span>Brand: </span><a href="#">{{$data['Products']->ProductBrand}}</a> </div>
-    <div class="model"><span>Product SKU: </span>{{$data['Products']->ProductSKU}}</div>
+    <div class="price-tax"><span>Ex Tax:</span> $60.00</div>
+    <div class="brand"><span>Brand:</span><a href="#">{{$data['Products']->ProductBrand}}</a> </div>
+    <div class="model"><span>Product SKU:</span>{{$data['Products']->ProductSKU}}</div>
     </div>
     </div>
     
     
     <div id="product">
-    <h4 style="font-weight: bold; margin-top: 0;">Sepcifications</h4>
+    <h4>Sepcifications</h4>
     {{$data['Products']->ProductDesc}}
+    <div class="image_option_type form-group required">
+    <label class="control-label">Colors</label>
+    <ul class="product-options clearfix"id="input-option231">
+    <li class="radio">
+    <label>
+    <input class="image_radio" type="radio" name="option[231]" value="33">
+    <img src="image/demo/colors/blue.jpg" data-original-title="blue +$12.00" class="img-thumbnail icon icon-color"> <i class="fa fa-check"></i>
+    <label> </label>
+    </label>
+    </li>
+    <li class="radio">
+    <label>
+    <input class="image_radio" type="radio" name="option[231]" value="34">
+    <img src="image/demo/colors/brown.jpg" data-original-title="brown -$12.00" class="img-thumbnail icon icon-color"> <i class="fa fa-check"></i>
+    <label> </label>
+    </label>
+    </li>
+    <li class="radio">
+    <label>
+    <input class="image_radio" type="radio" name="option[231]" value="35"> <img src="image/demo/colors/green.jpg"
+    data-original-title="green +$12.00" class="img-thumbnail icon icon-color"> <i class="fa fa-check"></i>
+    <label> </label>
+    </label>
+    </li>
+    <li class="selected-option">
+    </li>
+    </ul>
+    </div>
     
     <form>
     <div class="form-group box-info-product">
@@ -126,7 +154,7 @@
             <input type="hidden" name="id" value="{{$data['Products']->id}}">
             {{-- <input type="button" title="" value="Add to Cart" id="button-cart" class="btn btn-mega btn-lg" data-original-title="Add to Cart"> --}}
             {{-- <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick="cart.add('50');"><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button> --}}
-            <p class="xyz addToCart">Add to Cart</p>
+            <p class="xyz addToCart"><i class="fa fa-shopping-cart"></i>Add to Cart</p>
         </form></div>
     <div class="add-to-links wish_comp">
     <ul class="blank list-inline">
