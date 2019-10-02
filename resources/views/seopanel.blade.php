@@ -25,7 +25,7 @@
         <form method="POST" action="/admin/seopanel/">
             @csrf
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Example select</label>
+                  <label for="exampleFormControlSelect1">Select Page</label>
                   <select class="form-control" id="exampleFormControlSelect1" name="WebPage">
                     @foreach ($pages as $item)
                      <option value="{{$item->id}}">{{$item->WebPage}}</option>
@@ -98,10 +98,5 @@
 
 
 @endsection
-
-
-
-
-
 
 

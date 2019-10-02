@@ -37,11 +37,11 @@
                 <div class="col-md-10">
                         <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="BlogImage">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                <label class="custom-file-label" for="customFile">Choose file (Featured Image)</label> 
                         </div>
                 </div>
                 <div class="col-md-2">
-                      <input class="btn btn-primary" type="submit" style="width: 100%;" value="Banner Upload">
+                      <input class="btn btn-primary" type="submit" style="width: 100%;" value="Add Blog">
                 </div>
         </div>
 </form>

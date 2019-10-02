@@ -33,7 +33,7 @@
                   <td style="width: 10%;">{{$item->product->count()}}</td>
                   <td style="width: 12%; padding: 6px 0 0 15px;"><a href="/admin/category/{{$item->id}}/edit"><button type="button" class="btn btn-primary">Edit</button></a>
                     <form action="/admin/category/{{$item->id}}" method="POST">
-                            {{ method_field('DELETE') }}
+                        @method('DELETE')
                             <input type="hidden" value="{{$item->id}}" name="idd">
                         <input type="submit" class="btn btn-danger" value="Delete">
                         @csrf

@@ -29,7 +29,7 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label>Select Caegory</label>
-                                <select class="form-control" id="" name="category_id">
+                                <select class="form-control" id="" name="category_id" required>
                                 @foreach ($categories as $category)
                                     
                                 <option value="{{$category->id}}">{{$category->CategoryName}}</option>
@@ -45,7 +45,7 @@
                                 <div class="input-group-prepend">
                                   <label class="input-group-text" for="inputGroupSelect01">Select Row</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01" name="ProductTag">
+                                <select class="custom-select" id="inputGroupSelect01" name="ProductTag" required>
                                   <option selected>Choose...</option>
                                   <option value="Featured">Featured</option>
                                   <option value="New Release">New Release</option>
@@ -59,7 +59,7 @@
                     
                     <div class="form-group">
                         <label>Product Name:</label>
-                    <input type="text" class="form-control" placeholder="Enter Product Name:" name="ProductName" value="{{old('ProductName')}}">
+                    <input type="text" class="form-control" placeholder="Enter Product Name:" name="ProductName" value="{{old('ProductName')}}" required>
                         <div style="color:red">{{$errors->first('ProductName')}}</div>
                       </div>
                     
@@ -67,7 +67,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label>Product Price:</label>
-                            <input type="text" class="form-control" placeholder="Enter Product Price:" name="ProductPrice" value="{{old('ProductPrice')}}">
+                            <input type="text" class="form-control" placeholder="Enter Product Price:" name="ProductPrice" value="{{old('ProductPrice')}}" required>
                             <div style="color:red">{{$errors->first('ProductPrice')}}</div>
                           </div>
                           <div class="form-group col-md-3">
@@ -92,7 +92,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Product Brand:</label>
-                            <input type="text" class="form-control" placeholder="Enter Product Brand:" name="ProductBrand" value="{{old('ProductBrand')}}">
+                            <input type="text" class="form-control" placeholder="Enter Product Brand:" name="ProductBrand" value="{{old('ProductBrand')}}" required>
                             <div style="color:red">{{$errors->first('ProductBrand')}}</div>
                         </div>
                         <div class="form-group col-md-6">
@@ -130,12 +130,12 @@
                             </div>
                             <div class="form-group col-md-3">
                                   <label>Product Quantity:</label>
-                                  <input type="text" class="form-control" placeholder="Enter Product Qty:" name="ProductQuantity" value="{{old('ProductQuantity')}}">
+                                  <input type="text" class="form-control" placeholder="Enter Product Qty:" name="ProductQuantity" value="{{old('ProductQuantity')}}" required>
                                   <div style="color:red"></div>
                             </div>
                             <div class="form-group col-md-6">
                                     <label>Product Unique SKU:</label>
-                                    <input type="text" class="form-control" placeholder="Enter Product SKU:" name="ProductSKU" value="{{old('ProductSKU')}}">
+                                    <input type="text" class="form-control" placeholder="Enter Product SKU:" name="ProductSKU" value="{{old('ProductSKU')}}" required>
                                     <div style="color:red">{{$errors->first('ProductSKU')}}</div>
                             </div>
                     </div>    

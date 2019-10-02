@@ -3,7 +3,7 @@
 <div class=ip-header>
 <h1 class=ip-logo>
 <a href=index.php>
-<img src="{{asset('storage/image/demo/logos/theme_logo_circle.png')}}">
+<img src="{{asset('storage/logo/theme_logo_e.png')}}">
 </a>
 </h1>
 <div class=ip-loader>
@@ -25,7 +25,6 @@
 {{-- @foreach ($data['Categories'] as $item)
 	
 	
-
 @endforeach
 {{dd($item->getParentCategory->id)}}	 --}}
 
@@ -57,21 +56,21 @@
 <li>
 <div class=banners>
 <div>
-<a href="#"><img src="{{asset('storage/image/demo/cms/banner1.jpg')}}" alt=banner1></a>
+<a href="#"><img src="{{asset('storage/images/banner1.jpg')}}" alt=banner1></a>
 </div>
 </div>
 </li>
 <li>
 <div class=banners>
 <div>
-<a href="#"><img src="{{asset('storage/image/demo/cms/banner2.jpg')}}" alt=banner1></a>
+<a href="#"><img src="{{asset('storage/images/banner2.jpg')}}" alt=banner1></a>
 </div>
 </div>
 </li>
 <li>
 <div class=banners>
 <div>
-<a href="#"><img src="{{asset('storage/image/demo/cms/banner3.jpg')}}" alt=banner1></a>
+<a href="#"><img src="{{asset('storage/images/banner3.jpg')}}" alt=banner1></a>
 </div>
 </div>
 </li>
@@ -79,7 +78,7 @@
 </div>
 </div>
 </div>
-<div class="module hidden-xs col-sm-12 four-block">
+{{-- <div class="module hidden-xs col-sm-12 four-block">
 <div class="modcontent clearfix">
 <div class=policy-detail>
 <div class=banner-policy>
@@ -90,7 +89,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> --}}
 </div>
 </div>
 </div>
@@ -170,7 +169,6 @@
                         <a class="quickview iframe-link visible-lg" data-fancybox-type=iframe href="/quickview/{{Str::slug($item->ProductName)}}">
                             <button class="addToCart"  data-toggle="tooltip" title="Add to Cart" onclick=""><i class="fa fa-shopping-cart"></i> <span class="">Add to Cart</span></button>
                         </a>
-                        
                         <button class="wishlist" type=button data-toggle=tooltip title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
                        {{-- <button class=compare type=button data-toggle=tooltip title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button> --}}
                         
@@ -705,12 +703,10 @@
 
 <!---Social Media Section Start--->
 <style>
-
 li.items.item-02.pinterest a {
     background: #e70020 !important;
     color: #fff;
 }	
-
 </style>
 
 

@@ -16,7 +16,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        
+        $products = Product::paginate(15);
         return view('viewproduct',compact('products'));
     }
 
@@ -118,9 +119,10 @@ class ProductsController extends Controller
                 'ProductPrice'=> 'required',
                 'ProductInstock'=> 'required',
                 'ProductQuantity'=> 'required',
-                'ProductSKU'=> 'required|unique:products,ProductSKU',
-                'ProductMtitle'=> 'required',
-                'ProductMDesc'=> '',
+                // 'ProductSKU'=> 'required|unique:products,ProductSKU',
+                'ProductSKU'=> 'required',
+                'ProductMtitle'=> 'nullable',
+                'ProductMDesc'=> 'nullable',
                 'ProductBrand'=> 'required',
                 'ProductWarranty'=> 'required',
                 'ProductDesc'=> 'required',

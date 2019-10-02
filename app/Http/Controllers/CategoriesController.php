@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories= Category::all();
-            //dd($categories);
+        //dd($categories);
         return view('viewcategory',compact('categories'));
     }
 
@@ -40,21 +40,15 @@ class CategoriesController extends Controller
      */
     public function store()
     {
-        
-
         $category=Category::create($this->Requestdata());
         $this->storeImage($category);
         return redirect('/admin/category')->with('message','Category Added');
-         
         //dd($request);
-
         // $name=request('CategoryName');
         // $prnt=request('CategoryParent');
-        
         // $customer = new Category();
         // $customer->CategoryName=$name;
         // $customer->CategoryParent=$prnt;
-       
         // $customer->save();
     }
 
@@ -75,9 +69,10 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($category)
     {
         $categories = Category::all();
+        $category = Category::where('id',$category)->get()->first();
         return view('editcategory',compact('category','categories'));   
     }
 
@@ -88,10 +83,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Category $category)
+    public function update($category)
     {
-        $category->update($this->Requestdata());
-            $this->storeImage($category);
+        Category::where('id',$category)->update($this->Requestdata());
+        // $category->update($this->Requestdata());
+        $this->storeImage($category);
         return redirect('/admin/category')->with('message','Category Updated');
     }
 
@@ -101,12 +97,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($category)
     {
         //$idd= request('idd');
-
-        $category->delete();
-       
+        Category::where('id',$category)->delete();
+        // $category->delete();
         return redirect('/admin/category')->with('message','Category Deleted');
     }
 
@@ -129,18 +124,20 @@ class CategoriesController extends Controller
     private function storeImage($category)
     {
         if (request()->has('CategoryImage')) {
-            //dd($category);
-            $category->update([
+           
+            Category::where('id',$category->id)->update([
                 'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
                 'CategoryBanner' => request()->CategoryBanner->store('category_images', 'public'),
             ]);
             // $category->update([
             //     'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
+            //     'CategoryBanner' => request()->CategoryBanner->store('category_images', 'public'),
             // ]);
-
+            // $category->update([
+            //     'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
+            // ]);
             // $image = Image::make(public_path('storage/'.$category->CategoryImage))->fit(300,300);
             // $image->save();
-          
         }
     }
 }
