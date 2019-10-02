@@ -5,7 +5,6 @@
     <br>
 <h2>Add New Product:</h2>
 
-<br>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -173,8 +172,7 @@
                         <textarea class="form-control description" id="" rows="3" name="ProductLongDesc">{{old('ProductLongDesc')}}</textarea>
                         <div style="color:red">{{$errors->first('ProductLongDesc')}}</div>
                    </div>
-                    <br>
-                    <br>
+
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadioInline5" value="Index" class="custom-control-input" name="ProductIndex" >
                         <label class="custom-control-label" for="customRadioInline5">Index</label>
@@ -186,17 +184,10 @@
                           <div style="color:red">{{$errors->first('ProductIndex')}}</div>
                     
                     
-                    <input type="submit" class="btn btn-primary mb-2" value="Add Product">
+                    <input type="submit" class="btn btn-primary mb-3" style="float:right;" value="Add Product">
                     
                     
                     </form>
              
 </div>
 @endsection
-
-
-
-
-
-
-

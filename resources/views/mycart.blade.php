@@ -12,6 +12,7 @@
         @foreach ($data['cart'] as $item)
             
         <tr>
+<<<<<<< HEAD
             <td class=text-center style=width:70px>
                     <a href=product.php> <img src="{{asset('storage/'.$item->options->image)}}" style=width:70px alt="{{$item->name}}" title="{{$item->name}}" class=preview> </a>
                 </td>
@@ -57,3 +58,29 @@
     </li>
     </ul>
     
+=======
+        <td class=text-left><strong>Sub-Total</strong>
+        </td>
+        <td class=text-right>{{$data['TotalAmountCart']}} PKR</td>
+        </tr>
+        <tr>
+        <td class=text-left><strong>Inclusive GST</strong>
+        </td>
+        <td class=text-right>17%/-</td>
+        </tr>
+        <tr>
+        <td class=text-left><strong>Total</strong>
+        </td>
+        <td class=text-right> PKR-</td>
+        </tr>
+        </tbody>
+        </table>
+        <p class=text-right> <a class="btn view-cart" href=cart.php><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href=checkout.php><i class="fa fa-share"></i>Checkout</a> </p>
+        </div>
+        </li>
+        </ul>
+        
+
+        
+
+>>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6

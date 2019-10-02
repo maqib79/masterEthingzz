@@ -60,9 +60,17 @@ ion-icon.md.hydrated {
     position: relative;
     top: 2px;
 }
+<<<<<<< HEAD
 .tox.tox-tinymce {
     width: 100% !important;
 }
+=======
+
+.tox.tox-tinymce {
+    width: 100% !important;
+}
+
+>>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
     </style>
 </head>
 

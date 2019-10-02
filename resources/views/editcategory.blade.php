@@ -47,10 +47,14 @@
                             <div style="color:red">{{$errors->first('CategoryImage')}}</div>
 
                             </div>
+<<<<<<< HEAD
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="CategoryBanner" >
                                 <label class="custom-file-label" for="validatedCustomFile">Category Banner</label>
                         <div style="color:red">{{$errors->first('CategoryBanner')}}</div>
+=======
+                
+>>>>>>> 18ec2bb4c3db57ad2fbc27761997d8892ecdcda6
                             <div class="form-group mt-4">
                                 <label for="exampleInputPassword1">Category Description:</label>
                                 <textarea  class="form-control description" name="CategoryDescription"  rows="3">{{$category->CategoryMDescription}}</textarea>

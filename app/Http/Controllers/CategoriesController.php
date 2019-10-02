@@ -124,7 +124,7 @@ class CategoriesController extends Controller
     private function storeImage($category)
     {
         if (request()->has('CategoryImage')) {
-           
+            //dd($category);
             Category::where('id',$category->id)->update([
                 'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
                 'CategoryBanner' => request()->CategoryBanner->store('category_images', 'public'),
