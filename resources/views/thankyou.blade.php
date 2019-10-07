@@ -10,7 +10,7 @@
   <div id="content" class="col-sm-12">
    <div class="so-onepagecheckout ">
         <div class="alert alert-success" role="alert" style="text-align:center">
-                <h2 class="alert-heading">Thankyou!</h2>
+                <h2 class="alert-heading">Thankyou! </h2>
                 <p>Happy Shopping with ethingzz.com</p>
                 <br>
               </div>
