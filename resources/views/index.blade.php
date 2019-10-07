@@ -25,7 +25,6 @@
 {{-- @foreach ($data['Categories'] as $item)
 	
 	
-
 @endforeach
 {{dd($item->getParentCategory->id)}}	 --}}
 
@@ -123,7 +122,15 @@
 <div class="ltabs-items-inner ltabs-slider ">
 
         @foreach ($data['FeaturedProducts'] as $item)
-    
+        {{-- {{dump($item->ProductName)}}
+       
+        {{dump($pro)}}
+
+        {{dump(str_replace('-', '0',$pro ))}}
+        {{dump(Str::slug($pro))}} --}}
+
+        
+
 <div class="ltabs-item product-layout">
         <div class=product-item-container>
         <div class=left-block>
@@ -448,6 +455,10 @@
                 </div>
                 <div class=right-block>
                 <div class=caption>
+
+                    
+
+
                 <h4><a href="/product/{{Str::slug($item->ProductName)}}">{{$item->ProductName}}</a></h4>
                 <div class=ratings>
                 <div class=rating-box>
@@ -704,12 +715,10 @@
 
 <!---Social Media Section Start--->
 <style>
-
 li.items.item-02.pinterest a {
     background: #e70020 !important;
     color: #fff;
 }	
-
 </style>
 
 

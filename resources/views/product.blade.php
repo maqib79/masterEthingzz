@@ -108,7 +108,7 @@
     
     <div id="product">
     <h4 style="font-weight: bold; margin-top: 0;">Sepcifications</h4>
-    {{$data['Products']->ProductDesc}}
+    <?php echo $data['Products']->ProductDesc; ?>
     
     <form>
     <div class="form-group box-info-product">

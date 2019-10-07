@@ -37,7 +37,11 @@
                 <div class="col-md-10">
                         <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="BlogImage">
+<<<<<<< HEAD
                                 <label class="custom-file-label" for="customFile">Choose file (Featured Image)</label>
+=======
+                                <label class="custom-file-label" for="customFile">Choose file (Featured Image)</label> 
+>>>>>>> f33e245fb3763e505f622fee084de232eda18bd7
                         </div>
                 </div>
                 <div class="col-md-2">

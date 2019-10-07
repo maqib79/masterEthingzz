@@ -47,7 +47,7 @@
 <div class="row">
 <div class="header-top-left form-inline col-sm-6 col-xs-12 compact-hidden">
 <div class="form-group languages-block ">
-<form action=https://ethingzz.com/index.php method=post enctype="multipart/form-data" id=bt-language>
+<form action="" method=post enctype="multipart/form-data" id=bt-language>
 <a class="btn btn-xs dropdown-toggle" data-toggle=dropdown>
 <!-- <img src="storage/image/demo/flags/gb.png" alt=Pakistani-Rupees> -->
 <span class="">Pakistan</span>
@@ -84,7 +84,7 @@
 </div>
 
 <div id=sosearchpro class="col-sm-7 search-pro">
-<form action=https://ethingzz.com/index.php>
+<form action="">
 <div id=search0 class="search input-group">
 <div class="select_category filter_type icon-select">
 <select class=no-border name=category_id>
@@ -562,7 +562,6 @@ Navigation
     <!---    <script src="https://ethingzz.com/js/themejs/fadeimgscroll.js"></script>---><!---allscript Section End--->
     
     <script>
-
         $(document).ready(function(){
             
             $.ajaxSetup({
@@ -570,7 +569,6 @@ Navigation
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-
             $("#ordertable").on("click",".qtyUpdate",function(){
         //  $(".qtyUpdate").click(function(){
             var rowId= $(this).attr("id");
@@ -590,11 +588,7 @@ Navigation
             }
         });
           });
-
-
         
-
-
           $("#ordertable").on("click",".removeCart",function(){
         //  $(".qtyUpdate").click(function(){
             var rowId= $(this).attr("id");
@@ -611,7 +605,6 @@ Navigation
                 }
             });
           });
-
           $("#mycart").on("click",".rmv",function(){
             var rowId= $(this).attr("id");
             $.ajax({
@@ -627,10 +620,8 @@ Navigation
                 }
             });
                   });
-
                   
           function refreshmycart(){
-
                $.ajax({    
                     type: "GET",
                     url: "/mycart",             
@@ -640,7 +631,6 @@ Navigation
                         }
                 });
         }
-
         $(".xyz").click(function(){
                 var qty = $("input[name=quantity]").val();
             var id = $("input[name=id]").val();
@@ -665,7 +655,6 @@ Navigation
 }
 });
 }
-
 $("#carttable").on("click",".removeCart",function(){
         //  $(".qtyUpdate").click(function(){
             var rowId= $(this).attr("id");
@@ -686,10 +675,7 @@ window.onload=function(){
     
     cartlist();
     refreshmycart();
-
 }
-
-
         });
 </script>
     
@@ -724,7 +710,6 @@ autocomplete('#aa-search-input',
                        <span>${suggestion._highlightResult.ProductName.value}</span>
                    </div>
                `;
-
                return markup;
            },
            empty: function (result) {
@@ -743,5 +728,4 @@ autocomplete('#aa-search-input',
        }
    });
 })();
-
 </script>

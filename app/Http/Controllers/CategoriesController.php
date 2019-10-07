@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories= Category::all();
-            //dd($categories);
+        //dd($categories);
         return view('viewcategory',compact('categories'));
     }
 
@@ -40,21 +40,15 @@ class CategoriesController extends Controller
      */
     public function store()
     {
-        
-
         $category=Category::create($this->Requestdata());
         $this->storeImage($category);
         return redirect('/admin/category')->with('message','Category Added');
-         
         //dd($request);
-
         // $name=request('CategoryName');
         // $prnt=request('CategoryParent');
-        
         // $customer = new Category();
         // $customer->CategoryName=$name;
         // $customer->CategoryParent=$prnt;
-       
         // $customer->save();
     }
 
@@ -79,7 +73,6 @@ class CategoriesController extends Controller
     {
         $categories = Category::all();
         $category = Category::where('id',$category)->get()->first();
-
         return view('editcategory',compact('category','categories'));   
     }
 
@@ -94,8 +87,7 @@ class CategoriesController extends Controller
     {
         Category::where('id',$category)->update($this->Requestdata());
         // $category->update($this->Requestdata());
-            $this->storeImage($category);
-            
+        $this->storeImage($category);
         return redirect('/admin/category')->with('message','Category Updated');
     }
 
@@ -110,13 +102,12 @@ class CategoriesController extends Controller
         //$idd= request('idd');
         Category::where('id',$category)->delete();
         // $category->delete();
-       
         return redirect('/admin/category')->with('message','Category Deleted');
     }
 
     private function Requestdata(){
         
-        return request()->validate(
+        return request()->validate(                                                 
             [
                 'CategoryName'=> 'required|min:3',
                 'CategoryParent'=> 'required',
@@ -133,8 +124,8 @@ class CategoriesController extends Controller
     private function storeImage($category)
     {
         if (request()->has('CategoryImage')) {
-            //dd($category);
-            Category::where('id',$category)->update([
+           
+            Category::where('id',$category->id)->update([
                 'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
                 'CategoryBanner' => request()->CategoryBanner->store('category_images', 'public'),
             ]);
@@ -145,11 +136,13 @@ class CategoriesController extends Controller
             // ]);
             // $category->update([
             //     'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
+            //     'CategoryBanner' => request()->CategoryBanner->store('category_images', 'public'),
             // ]);
-
+            // $category->update([
+            //     'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
+            // ]);
             // $image = Image::make(public_path('storage/'.$category->CategoryImage))->fit(300,300);
             // $image->save();
-          
         }
     }
 }

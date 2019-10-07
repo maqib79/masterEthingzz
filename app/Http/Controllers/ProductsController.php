@@ -118,6 +118,7 @@ class ProductsController extends Controller
                 'ProductInstock'=> 'required',
                 'ProductQuantity'=> 'required',
                 'ProductSKU'=> 'required',
+                 // 'ProductSKU'=> 'required|unique:products,ProductSKU',
                 'ProductMtitle'=> 'required',
                 'ProductMDesc'=> '',
                 'ProductBrand'=> 'required',

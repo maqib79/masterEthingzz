@@ -46,17 +46,14 @@ ul.blank.list-inline {
             <li><a href="/category/{{Str::slug($data['Products']->category->getParentCategory->CategoryName)}}">{{$data['Products']->category->getParentCategory->CategoryName}}</a></li>
             <li><a href="/category/{{Str::slug($data['Products']->category->CategoryName)}}">{{$data['Products']->category->CategoryName}}</a></li>
             <li><a href="/product/{{Str::slug($data['Products']->ProductName)}}">{{$data['Products']->ProductName}}</a></li>
-
         @else
         <li><a href="/category/{{Str::slug($data['Products']->category->getParentCategory->CategoryName)}}">{{$data['Products']->category->getParentCategory->CategoryName}}</a></li>
         <li><a href="/category/{{Str::slug($data['Products']->category->CategoryName)}}">{{$data['Products']->category->CategoryName}}</a></li>
        <li><a href="/product/{{Str::slug($data['Products']->ProductName)}}">{{$data['Products']->ProductName}}</a></li>
-
         @endif
     @else
         <li><a href="category/{{Str::slug($data['Products']->category->CategoryName)}}">{{$data['Products']->category->CategoryName}}</a></li>
         <li><a href="/product/{{Str::slug($data['Products']->ProductName)}}">{{$data['Products']->ProductName}}</a></li>
-
     @endif
     
     </ul> --}}
@@ -128,7 +125,8 @@ ul.blank.list-inline {
     
     <div id="product">
     <h4 style="font-weight: bold; margin-top: 0px;">Sepcifications</h4>
-    {{$data['Products']->ProductDesc}}
+    {{-- {{$data['Products']->ProductDesc}} --}}
+    <?php echo $data['Products']->ProductDesc; ?>
 
     
     <form>
@@ -241,4 +239,3 @@ ul.blank.list-inline {
     </body>
     </html>
     </div>
-    

@@ -89,7 +89,6 @@ class CustomController extends Controller
     }
     public function category($category) {
         // $users = DB::table('orders')->get();
-         dd(Cart::content());
        
         $data['Categories'] = Category::ParentCategory()->get();
         $cat=str_replace('-', ' ', $category);
@@ -158,7 +157,7 @@ class CustomController extends Controller
     public function checkoutproceed(){
         
         Mail::to('ASSD@ASDA.ASDAS')->send(new CheckOutMail());
-        dd('sent');
+        
         // $data = [
         //     'name' => 'abc',
         // ];
@@ -166,7 +165,7 @@ class CustomController extends Controller
                 # code...
                 DB::table('orders')->insert(
                     [
-                        'product_id' => $item->id,
+                     'product_id' => $item->id,
                      'quantity' => $item->qty,
                      'price' => $item->price,
                      'user_name' => request('firstname'),
@@ -177,9 +176,6 @@ class CustomController extends Controller
                      'user_city' => request('city'),
                      'delivery_method' => 'none',
                      'payment_method' => request('Payment_method'),
-                     
-                     
-                     
                      ]
                 );
 
@@ -197,6 +193,18 @@ class CustomController extends Controller
                  'total' => $total,
                  ]
             );
+            Cart::destroy();
+            $data['FeaturedProducts'] = Product::featured()->get();
+            $data['NewReleaseProducts'] = Product::newrelease()->get();
+            $data['OnSaleProducts'] = Product::onsale()->get();
+            $data['BestSellingProducts'] = Product::bestselling()->get();
+            $data['Categories'] = Category::ParentCategory()->get();
+            $data['Banners'] = Banner::all();
+            $data['SaleCheck'] = Banner::all();
+            $data['cart'] = Cart::content();
+            $data['TotalAmountCart'] = Cart::subtotal();
+
+            return view('thankyou',['data'=>$data]);
 
     }
 

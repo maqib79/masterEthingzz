@@ -25,7 +25,6 @@
 .row {
     margin: 0px;
 }
-
         .live-search-list {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -38,7 +37,6 @@ border-radius: 5px;
 font-family: 'Lato', sans-serif;
 color: #fff;
 }
-
 .live-search-box {
 width: 100%;
 display: block;
@@ -51,24 +49,28 @@ border: 1px solid #3498db;
 -moz-border-radius: 5px;
 border-radius: 5px;
 }
-
 .live-search-list li {
 color: fff;
 list-style: none;
 padding: 0;
 margin: 5px 0;
 }
-
 ion-icon.md.hydrated {
     padding: 0px 15px 0 0;
     position: relative;
     top: 2px;
 }
+<<<<<<< HEAD
 
 .tox.tox-tinymce {
     width: 100% !important;
 }
 
+=======
+.tox.tox-tinymce {
+    width: 100% !important;
+}
+>>>>>>> f33e245fb3763e505f622fee084de232eda18bd7
     </style>
 </head>
 

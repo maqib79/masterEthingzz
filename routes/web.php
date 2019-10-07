@@ -24,7 +24,7 @@ Route::get('/search/{searchKey}', 'CustomController@search');
 Route::post('/addtocart', 'CustomController@addcart');
 Route::get('/cart', 'CustomController@viewcart');
 Route::get('/checkout', 'CustomController@checkout');
-Route::get('/checkoutproceed', 'CustomController@checkoutproceed');
+Route::post('/checkoutproceed', 'CustomController@checkoutproceed');
 Route::get('/cartlist', 'CustomController@cartlist');
 Route::post('/updatecart', 'CustomController@updatecart');
 Route::post('/removecart', 'CustomController@removecart');

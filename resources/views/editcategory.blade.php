@@ -2,7 +2,15 @@
 
 @section('content')
 <div class="container" pt='5'>
-    
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     
                 @if (session()->has('message'))
                 <div class="alert alert-success" role="alert" pt="5">
@@ -37,9 +45,13 @@
                                     <input type="file" class="custom-file-input" name="CategoryImage" >
                                     <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                             <div style="color:red">{{$errors->first('CategoryImage')}}</div>
+                            <br>
 
                             </div>
-                
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="CategoryBanner" >
+                                <label class="custom-file-label" for="validatedCustomFile">Category Banner</label>
+                        <div style="color:red">{{$errors->first('CategoryBanner')}}</div>
                             <div class="form-group mt-4">
                                 <label for="exampleInputPassword1">Category Description:</label>
                                 <textarea  class="form-control description" name="CategoryDescription"  rows="3">{{$category->CategoryMDescription}}</textarea>

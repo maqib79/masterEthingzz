@@ -40,17 +40,24 @@
            </td>
            <td class="text-right">200</td>
            </tr>
+           
            <tr>
+           <td class="text-right" colspan="4">
+           <strong>Inclusive GST:</strong>
+           </td>
+           <td class="text-right">Tax (17%)</td>
+           </tr>
+           {{-- <tr>
            <td class="text-right" colspan="4">
            <strong>Tax (17%):</strong>
            </td>
            <td class="text-right">{{$total*0.17}}</td>
-           </tr>
+           </tr> --}}
            <tr>
            <td class="text-right" colspan="4">
            <strong>Total:</strong>
            </td>
-           <td class="text-right">{{$total+($total*0.17)+200}}</td>
+           <td class="text-right">{{$total+200}}</td>
            </tr>
        </tfoot>
        
