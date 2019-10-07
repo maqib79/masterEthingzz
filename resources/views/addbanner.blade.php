@@ -31,7 +31,7 @@
             <label for="validationTooltip02"></label>
             <div class="custom-file">
                     <input type="file" class="custom-file-input" name="BannerImage">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <label class="custom-file-label" for="customFile">Choose file:</label>
             </div>
           </div>
         </div>
