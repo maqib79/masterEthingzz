@@ -15,8 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+        //dd($categories);
         $categories= Category::all();
-            //dd($categories);
         return view('viewcategory',compact('categories'));
     }
 
@@ -130,11 +130,7 @@ class CategoriesController extends Controller
     {
         if (request()->has('CategoryImage')) {
             //dd($category);
-<<<<<<< HEAD
             Category::where('id',$category->id)->update([
-=======
-            $category->update([
->>>>>>> parent of f33e245... Category image issue resolved
                 'CategoryImage' => request()->CategoryImage->store('category_images', 'public'),
                 'CategoryBanner' => request()->CategoryBanner->store('category_images', 'public'),
             ]);

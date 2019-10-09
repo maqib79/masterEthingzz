@@ -89,12 +89,22 @@ class CustomController extends Controller
     }
     public function category($category) {
         // $users = DB::table('orders')->get();
-         dd(Cart::content());
+        //  dd(Cart::content());
        
         $data['Categories'] = Category::ParentCategory()->get();
         $cat=str_replace('-', ' ', $category);
         $data['Products'] = Category::where('CategoryName',$cat)->get()->first();
-        $data['pro'] = Product::where('category_id',$data['Products']->id)->paginate(12);
+        $data['pro'] = Product::where('category_id',$data['Products']->id)->get();
+        if(count($data['pro'])==0){
+            $data['Products'] = $data['Products']->getChildCategories->first();
+            $data['pro'] = Product::where('category_id',$data['Products']->id)->paginate(12);
+
+        }else{
+
+            $data['pro'] = Product::where('category_id',$data['Products']->id)->paginate(12);
+        }
+        
+        
         return view('category',['data'=>$data]);
     }
 

@@ -162,7 +162,8 @@
 					<div class="products-list row grid">
 
 
-
+@if (count($data['pro'])>0)
+	
 
 
 
@@ -226,7 +227,10 @@
 </div>
 							
 	@endforeach
-	
+	@else
+	<h2>No Products Available</h2>
+@endif
+
 	
 </div><!-----products-list row grid------>
 </div>

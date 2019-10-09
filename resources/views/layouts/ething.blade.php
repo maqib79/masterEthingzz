@@ -183,7 +183,7 @@ All Categories
 			<span>{{$item->CategoryName}}</span>
 			<b class="caret"></b>
         </a>
-        @if ($item->getChildCategories)
+        @if (count($item->getChildCategories)>0)
             
 		<div class="sub-menu" data-subwidth="100" style="width: 1049px; display: none; right: 0px;">
 				<div class="content" style="display: none;">
@@ -191,25 +191,22 @@ All Categories
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-md-12 hover-menu">
-									<div class="menu">
+                                    <div class=menu>
 										<ul>
+                                            @foreach ($item->getChildCategories as $child)
                                             <li>
-											<p class="close-menu"></p>
-                                                @foreach ($item->getChildCategories as $child)
                                                     
                                                 <a href="/category/{{Str::slug($child->CategoryName)}}" class="main-menu">{{$child->CategoryName}}</a>
+                                                
                                                 @if (count($child->getChildCategories)>0)
                                                     <ul>
-                                                            
                                                             @foreach ($child->getChildCategories as $grandchild)
-                                                                
                                                               <li><a href="/category/{{Str::slug($grandchild->CategoryName)}}">{{$grandchild->CategoryName}}</a></li>
                                                             @endforeach
                                                         </ul>
                                                 @endif
-                                                    <p class="close-menu"></p>
-                                                @endforeach
                                             </li>
+                                            @endforeach
 										</ul>
 									</div>
 								</div>
