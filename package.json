@@ -26,6 +26,6 @@
     },
     "dependencies": {
         "metro4": "^4.2.48",
-        "tinymce": "^5.0.14"
+        "tinymce": "^5.4.0"
     }
 }
